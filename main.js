@@ -1,5 +1,21 @@
-// flattning the nested array
+// Palindrome number
 
-const arr = [1,2,[1,2,[2,3,[4,5]]]]
+const isPalindrome = (inNum) => {
+  const num = inNum;
+  let newNum = 0;
+  let rem = 0;
 
-console.log(arr.flat(Infinity))
+  while (inNum) {
+    rem = inNum % 10;
+    newNum = newNum * 10 + rem;
+    inNum = Math.floor(inNum / 10);
+  }
+
+  if (newNum === num) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+console.log(isPalindrome(121));
